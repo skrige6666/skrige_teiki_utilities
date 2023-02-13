@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         fs_improve_css.user.js
 // @namespace    https://kurone.co/
-// @version      0.1
+// @version      0.1.1
 // @description  童話画廊のCSSをちょっと良くする
 // @author       skrige
 // @match        http://soraniwa.428.st/fs/
