@@ -1,7 +1,8 @@
 # skrige_teiki_utilities
-適当に作った定期更新型オンラインゲーム及びそれに類する、あるいは近しいキャラクター交流型ゲーム用のスクリプトを置く場所です。
+適当に作った定期更新型オンラインゲーム及びそれに類する、  
+あるいはそれに近しいキャラクター交流型ゲーム用のスクリプトを置く場所です。
 
-[tampermonley](https://www.tampermonkey.net/)での使用を想定しています。
+[tampermonley](https://www.tampermonkey.net/)での使用を想定しています。  
 利用したことによって起きたトラブルの責任は負えません。
 不具合は連絡してもらえれば多分がんばります。
 
@@ -9,7 +10,7 @@
 見た目のみを変更するスクリプトを置くディレクトリです。
 
 ### [Yurikagami_plus.user.js](https://skrige6666.github.io/skrige_teiki_utilities/style/Yurikagami_plus.user.js)
-百合鏡のデザインをめちゃくちゃ改変します。
+百合鏡のデザインをめちゃくちゃ改変します。  
 めちゃくちゃ変えてるので、公式側の変更で大きく崩れる場合があります。
 
 ### [fs_improve_css.user.js](https://skrige6666.github.io/skrige_teiki_utilities/style/fs_improve_css.user.js)
@@ -17,4 +18,4 @@
 
 
 ## function
-機能追加系のスクリプトを置くディレクトリです。。まだここには無い
+機能追加系のスクリプトを置くディレクトリです。まだここには無い
