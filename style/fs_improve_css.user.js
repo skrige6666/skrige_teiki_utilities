@@ -14,6 +14,6 @@
     //スキルツールチップ
     GM_addStyle('#skill td:nth-child(4){position:relative;}.fulldesc{position:absolute;top:calc(100% + 0.2em); pointer-events:none;left:0.5em;right:-0.5em;z-index:200;}tr.odd .fulldesc{background-color: #463020;}tr.even .fulldesc{background-color: #40291c;}');
     //プレビューの横幅調整
-    GM_addStyle('#t0{width:481px');
+    GM_addStyle('#t0{width:481px;}');
 
 })();
