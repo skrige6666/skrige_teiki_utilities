@@ -24,6 +24,6 @@
 
 機能追加系のスクリプトを置くディレクトリです。
 
-### [OthersidePager.iuser.js](https://skrige6666.github.io/skrige_teiki_utilities/pager/OthersidePager.user.js]
+### [OthersidePager.user.js](https://skrige6666.github.io/skrige_teiki_utilities/pager/OthersidePager.user.js]
 
 北摩のプロフページに隣のenoのプロフへ移動できるボタンを追加します。
