@@ -27,3 +27,7 @@
 ### [OthersidePager.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/pager/OthersidePager.user.js)
 
 北摩のプロフページに隣のenoのプロフへ移動できるボタンを追加します。
+
+### [KitamaProfileQuickOpen.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/KitamaProfileQuickOpen.user.js)
+
+北摩のキャラリストでミドルクリック時にバックグラウンドでプロフィールを開くようにします。
