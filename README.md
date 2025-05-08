@@ -35,8 +35,8 @@
 ## fix
 
 公式対応までの機能修正スクリプトを置くディレクトリです。
+いまはないです
 
-### [KitamaAreaArchiveFix.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/fix/KitamaAreaArchiveFix.user.js)
+<!--### [KitamaAreaArchiveFix.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/fix/KitamaAreaArchiveFix.user.js)
 
-
-北摩のエリアでアーカイブを見るボタンが動かない問題を修正します。公式で修正されたら無効化してください。
+北摩のエリアでアーカイブを見るボタンが動かない問題を修正します。公式で修正されたら無効化してください。-->
