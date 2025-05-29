@@ -3,7 +3,7 @@
 // @namespace    https://kurone.co/
 // @description  アイコン選択に名前を連動させたい
 // @author       skrige
-// @version      v0-beta.1
+// @version      v0-beta.2
 // @match        https://wdrb.work/otherside/area.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wdrb.work
 // @grant        GM_setValue
@@ -92,8 +92,15 @@ const icon_mapping = {};
     html += "<table>";
     html += "<tr><th>アイコン</th><th>名前</th></tr>";
     // 現在のアイコンリストの順番でマッピングデータをテーブルに追加
+    const displayedUrls = new Set();
     imgList.each(function () {
       const icon = $(this).attr("src");
+      // すでに表示済みのURLの場合はスキップ
+      if (displayedUrls.has(icon)) {
+        return;
+      }
+      displayedUrls.add(icon);
+
       const name = icon_mapping[icon] || "";
       html += `<tr><td><img src="${icon}" style="width:60px"></td><td><input type="text" value="${name}"></td></tr>`;
     });
