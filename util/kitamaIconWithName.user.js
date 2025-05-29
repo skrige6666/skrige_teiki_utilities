@@ -3,7 +3,7 @@
 // @namespace    https://kurone.co/
 // @description  アイコン選択に名前を連動させたい
 // @author       skrige
-// @version      v0-beta
+// @version      v0-beta.1
 // @match        https://wdrb.work/otherside/area.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wdrb.work
 // @grant        GM_setValue
@@ -46,7 +46,8 @@ const icon_mapping = {};
   });
 
   // 初期ネームを取得
-  const initialName = $('input[type="text"][name="nickname"]').val();
+  const initialChatName = $('#chat_form input[name="nickname"]').val();
+  const initialMessageName = $('#message_form input[name="nickname"]').val();
   let lastSelectName = "";
 
   // アイコン選択時に名前を自動設定
@@ -55,10 +56,10 @@ const icon_mapping = {};
     const messageName = $('#message_form input[name="nickname"]').val();
     //入力欄が初期ネーム、最後に選択した名前、空欄のいずれでもない場合は処理を中止
     if (
-      (chatName !== initialName &&
+      (chatName !== initialChatName &&
         chatName !== lastSelectName &&
         chatName !== '') ||
-      (messageName !== initialName &&
+      (messageName !== initialMessageName &&
         messageName !== lastSelectName &&
         messageName !== '')
     ) {
@@ -130,5 +131,6 @@ const icon_mapping = {};
   function modalClose() {
     $("div.modal").css("display", "none");
     $("div#overlay").css("display", "none");
+    //console.log(icon_mapping);
   }
 })(jQuery);
