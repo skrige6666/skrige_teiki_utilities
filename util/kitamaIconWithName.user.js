@@ -58,15 +58,16 @@ const icon_mapping = {};
     if (
       (chatName !== initialChatName &&
         chatName !== lastSelectName &&
-        chatName !== '') ||
+        chatName !== "") ||
       (messageName !== initialMessageName &&
         messageName !== lastSelectName &&
-        messageName !== '')
+        messageName !== "")
     ) {
       return;
     }
-    var choice = $(this).data().img;    var name = icon_mapping[choice];
-    // 名前があれば入力欄に設定、なければ初期ネームに戻す
+    var choice = $(this).data().img;
+    var name = icon_mapping[choice];
+    // 名前の設定があれば入力欄に設定、なければ初期ネームに戻す
     if (name) {
       lastSelectName = name;
       $('input[name="nickname"]').val(name);
@@ -91,14 +92,16 @@ const icon_mapping = {};
     html += "<table>";
     html += "<tr><th>アイコン</th><th>名前</th></tr>";
     // 現在のアイコンリストの順番でマッピングデータをテーブルに追加
-    imgList.each(function() {
+    imgList.each(function () {
       const icon = $(this).attr("src");
       const name = icon_mapping[icon] || "";
       html += `<tr><td><img src="${icon}" style="width:60px"></td><td><input type="text" value="${name}"></td></tr>`;
     });
     html += "</table>";
-    html += '<div class="skill_buttons"><button id="save_mapping" type="button">保存</button>';
-    html += '<button id="cancel_mapping" type="button">キャンセル</button></div>';
+    html +=
+      '<div class="skill_buttons"><button id="save_mapping" type="button">保存</button>';
+    html +=
+      '<button id="cancel_mapping" type="button">キャンセル</button></div>';
     html += "</div>";
     // モーダルを開く
     $("body").append(html);
