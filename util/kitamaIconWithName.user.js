@@ -3,7 +3,7 @@
 // @namespace    https://kurone.co/
 // @description  アイコン選択に名前を連動させたい
 // @author       skrige
-// @version      v1
+// @version      v1.1
 // @match        https://wdrb.work/otherside/area.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wdrb.work
 // @grant        GM_setValue
@@ -74,9 +74,11 @@ const icon_mapping = {};
     var name = icon_mapping[choice];
     if (name) {
       lastSelectName = name;
-      $('input[name="nickname"]').val(name);
+      $('#chat_form input[name="nickname"]').val(name);
+      $('#message_form input[name="nickname"]').val(name);
     } else {
-      $('input[name="nickname"]').val(initialName);
+      $('#chat_form input[name="nickname"]').val(initialChatName);
+      $('#message_form input[name="nickname"]').val(initialMessageName);
     }
   });
 
