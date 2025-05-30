@@ -3,11 +3,12 @@
 // @namespace    https://kurone.co/
 // @description  アイコン選択に名前を連動させたい
 // @author       skrige
-// @version      v1.1.1
+// @version      v1.2
 // @match        https://wdrb.work/otherside/area.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wdrb.work
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @grant        GM_listValues
 // ==/UserScript==
 
 //＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
@@ -17,17 +18,28 @@
 //　　　最後に選んだアイコンの名前、
 //　　　空欄
 //　　の場合にのみ上書きします。
-//　　動作しないなとおもったらメッセージの方で名前が入力されているかもしれません。
+//　　動作しないなとおもったらメッセージの方で違う名前が入力されているかもしれません。
 //　・空欄への自動変更は対応していません。空欄の場合変更しないという動作になります。
 //　・ページ下部にアイコンマッピングボタンを追加します
 //　・URLで管理しているため、アイコンを並び替えても保持されます
 //　・ユーザースクリプトなので当然ながら別のブラウザでは見れません
 //　・あんまりアイコンが大量だと動作しなくなるかも
 //＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+//
+// 最終更新　マルチアカウント対応
+//
+//＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 
 const icon_mapping = {};
 (($) => {
-  const savedMapping = GM_getValue("iconNameMapping", "{}");
+  const eno = $("#prof > div.charaBanner.cap > a").attr("href").replace(
+    /profile?eno=(\d+)/,
+    "$1"
+  )||0;
+  const keys = GM_listValues();
+  const savedMapping = keys.includes("iconNameMapping_" + eno)
+    ? GM_getValue("iconNameMapping_" + eno, "{}")
+    : GM_getValue("iconNameMapping", "{}");//過去バージョン対応用
   if (savedMapping !== "{}") {
     try {
       Object.assign(icon_mapping, JSON.parse(savedMapping));
@@ -120,7 +132,7 @@ const icon_mapping = {};
       var name = $(this).val();
       icon_mapping[icon] = name;
     });
-    GM_setValue("iconNameMapping", JSON.stringify(icon_mapping));
+    GM_setValue("iconNameMapping_" + eno, JSON.stringify(icon_mapping));
     modalClose();
   });
 
