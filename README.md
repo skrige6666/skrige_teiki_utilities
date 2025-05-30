@@ -8,7 +8,7 @@
 
 ## style
 
-見た目のみを変更するスクリプトを置くディレクトリです。
+見た目のみを変更するスクリプトです。
 
 ### [Yurikagami_plus.user.js](https://skrige6666.github.io/skrige_teiki_utilities/style/Yurikagami_plus.user.js)
 
@@ -22,7 +22,7 @@
 
 ## function
 
-機能追加系のスクリプトを置くディレクトリです。
+機能追加系のスクリプトです。
 
 ### [OthersidePager.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/pager/OthersidePager.user.js)
 
@@ -38,7 +38,7 @@
 
 ## fix
 
-公式対応までの機能修正スクリプトを置くディレクトリです。
+公式対応までの機能修正スクリプトです。
 いまはないです
 
 <!--### [KitamaAreaArchiveFix.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/fix/KitamaAreaArchiveFix.user.js)
