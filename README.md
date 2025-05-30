@@ -32,6 +32,10 @@
 
 北摩のキャラリストでミドルクリック時にバックグラウンドでプロフィールを開くようにします。
 
+### [kitamaIconwithName.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/kitamaIconwithName.user.js)
+
+北摩のチャット欄でアイコン選択時に発言者名を連動させられるようにします。
+
 ## fix
 
 公式対応までの機能修正スクリプトを置くディレクトリです。
