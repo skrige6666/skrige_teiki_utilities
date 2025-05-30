@@ -3,7 +3,7 @@
 // @namespace    https://kurone.co/
 // @description  アイコン選択に名前を連動させたい
 // @author       skrige
-// @version      v1.1
+// @version      v1.1.1
 // @match        https://wdrb.work/otherside/area.php*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=wdrb.work
 // @grant        GM_setValue
@@ -67,7 +67,7 @@ const icon_mapping = {};
         messageName !== lastSelectName &&
         messageName !== "")
     ) {
-      console.log("名前が手動で変更されているので中止", e);
+      console.log("名前が手動で変更されているので中止");
       return;
     }
     var choice = $(this).data().img;
@@ -115,7 +115,6 @@ const icon_mapping = {};
   });
 
   $(document).on("click", "#save_mapping", function () {
-    var icon_mapping = {};
     $('.modal input[type="text"]').each(function () {
       var icon = $(this).closest("tr").find("img").attr("src");
       var name = $(this).val();
