@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         kitamaAppendSkillName
-// @namespace    https://kurone.co//
+// @namespace    https://kurone.co/
 // @version      0.1
 // @description  スキル選択のアイコンにスキル名が出ます。
 // @author       skrige
