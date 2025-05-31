@@ -36,6 +36,10 @@
 
 北摩のチャット欄でアイコン選択時に発言者名を連動させられるようにします。
 
+### [kitamaAppendSkillName.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/kitamaAppendSkillName.user.js)
+
+北摩のスキル選択画面でスキルアイコンにスキル名が出るようにします。
+
 ## fix
 
 公式対応までの機能修正スクリプトです。
