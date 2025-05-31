@@ -38,7 +38,11 @@
 
 ### [kitamaAppendSkillName.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/kitamaAppendSkillName.user.js)
 
-北摩のスキル選択画面でスキルアイコンにスキル名が出るようにします。
+北摩のスキル選択画面でスキルアイコンにスキル名が出るようにします
+
+### [kitamaTabNameChanger.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/kitamaTabNameChanger.user.js)
+
+北摩のアクティビティ画面でタブ名にエリア名を表示するようにします。
 
 ## fix
 
