@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kitamaNotificationPlus
 // @namespace    https://kurone.co/
-// @version      0.1-beta
+// @version      0.1-beta-2
 // @description  未読が有ったら通知が出ます。
 // @author       skrige
 // @match        https://wdrb.work/otherside/*
@@ -39,7 +39,7 @@
   // 現在のページがsurf.phpの場合はスキップ
   if (window.location.href.indexOf("surf.php") === -1) {
     $('a.new[href="surf.php"]').length > 0
-      ? notification("未読のSURFがあります。")
+      ? notification("未読のSURFメッセージがあります。")
       : null;
   }
 
@@ -114,7 +114,7 @@
           $('a[href="info.php"]').removeClass("new");
         }
         if ($html.find('a.new[href="surf.php"]').length > 0) {
-          notification("未読のSURFがあります。");
+          notification("未読のSURFメッセージがあります。");
           $('a[href="surf.php"]').addClass("new");
         } else {
           $('a[href="surf.php"]').removeClass("new");
