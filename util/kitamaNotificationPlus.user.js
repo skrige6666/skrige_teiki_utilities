@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kitamaNotificationPlus
 // @namespace    https://kurone.co/
-// @version      0.1-beta-2
+// @version      0.1-beta-3
 // @description  未読が有ったら通知が出ます。
 // @author       skrige
 // @match        https://wdrb.work/otherside/*
@@ -25,8 +25,13 @@
 // そのブラウザでの最後アクセス以降に「言及」「メッセージ」を含むACTIVITY更新があった場合に通知を出します。
 // (※アクティビティ処理はアクセスタイミングやタブ切り替えのタイミングで多少前後する場合があります)
 
+// 最終更新 言及のチェックをマルチアカウント対応に変更
 
 (($) => {
+    const eno = $("#prof > div.charaBanner.cap > a").attr("href").replace(
+    /profile?eno=(\d+)/,
+    "$1"
+  )||0;
   let currentTime = new Date().getTime();
 
   //ページ読み込み時の処理
@@ -44,7 +49,7 @@
   }
 
   // 最終アクティブ時間以降のアクティビティチェック
-  const lastActiveTime = Number(GM_getValue("lastActiveTime", null));
+  const lastActiveTime = Number(GM_getValue("lastActiveTime_"+eno, GM_getValue("lastActiveTime",null)));
   if (lastActiveTime) {
     const $activities = $("ul.activity li");
     $activities.each(function () {
@@ -70,7 +75,7 @@
       }
     });
   }
-  GM_setValue("lastActiveTime", currentTime);
+  GM_setValue("lastActiveTime_"+eno, currentTime);
 
   let checkInterval = null;
   let lastCheckTime = currentTime;
@@ -84,7 +89,7 @@
 
       // 最終チェックタイムから5分経過している場合は最終操作時間を更新
       if (lastCheckTime && currentTime - lastCheckTime >= 5 * 60 * 1000) {
-        GM_setValue("lastActiveTime", currentTime);
+        GM_setValue("lastActiveTime_"+eno, currentTime);
       }
     } else {
       //取得インターバルを設定
@@ -92,7 +97,7 @@
       // 最終チェックタイムから5分経過している場合は処理と最終操作時間を更新
       if (lastCheckTime && currentTime - lastCheckTime >= 5 * 60 * 1000) {
         checkUnread();
-        GM_setValue("lastActiveTime", currentTime);
+        GM_setValue("lastActiveTime_"+eno, currentTime);
       }
     }
   });
