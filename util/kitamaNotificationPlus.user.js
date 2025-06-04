@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kitamaNotificationPlus
 // @namespace    https://kurone.co/
-// @version      0.1-beta-3
+// @version      0.2
 // @description  未読が有ったら通知が出ます。
 // @author       skrige
 // @match        https://wdrb.work/otherside/*
@@ -87,17 +87,19 @@
       //取得インターバルをクリア
       clearInterval(checkInterval);
 
+      // ページアクセスを基準にしたいので一旦無効化
       // 最終チェックタイムから5分経過している場合は最終操作時間を更新
-      if (lastCheckTime && currentTime - lastCheckTime >= 5 * 60 * 1000) {
-        GM_setValue("lastActiveTime_"+eno, currentTime);
-      }
+      //if (lastCheckTime && currentTime - lastCheckTime >= 5 * 60 * 1000) {
+      //  GM_setValue("lastActiveTime_"+eno, currentTime);
+      //}
     } else {
       //取得インターバルを設定
       checkInterval = setInterval(checkUnread, 5 * 60 * 1000);
       // 最終チェックタイムから5分経過している場合は処理と最終操作時間を更新
       if (lastCheckTime && currentTime - lastCheckTime >= 5 * 60 * 1000) {
         checkUnread();
-        GM_setValue("lastActiveTime_"+eno, currentTime);
+      // ページアクセスを基準にしたいので一旦無効化
+      //  GM_setValue("lastActiveTime_"+eno, currentTime);
       }
     }
   });

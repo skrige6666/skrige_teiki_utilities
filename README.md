@@ -44,6 +44,10 @@
 
 北摩のアクティビティ画面でタブ名にエリア名を表示するようにします。
 
+### [kitamaNotificationPlus.user.js](https://github.com/skrige6666/skrige_teiki_utilities/raw/refs/heads/master/util/kitamaNotificationPlus.user.js)
+
+北摩で「未読のSURF」「未読のINFO」が有る場合に通知します。また５分おきにチェックを行います。また、最後のアクセス以降にメンションやメッセージが有った場合に通知します。
+
 ## fix
 
 公式対応までの機能修正スクリプトです。
