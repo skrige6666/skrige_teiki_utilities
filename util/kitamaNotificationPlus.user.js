@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kitamaNotificationPlus
 // @namespace    https://kurone.co/
-// @version      0.2
+// @version      0.3
 // @description  未読が有ったら通知が出ます。
 // @author       skrige
 // @match        https://wdrb.work/otherside/*
@@ -25,7 +25,9 @@
 // そのブラウザでの最後アクセス以降に「言及」「メッセージ」を含むACTIVITY更新があった場合に通知を出します。
 // (※アクティビティ処理はアクセスタイミングやタブ切り替えのタイミングで多少前後する場合があります)
 
-// 最終更新 言及のチェックをマルチアカウント対応に変更
+// version 0.3 通知の表示時間終了後に消滅するように
+// version 0.2 言及のチェックをマルチアカウント対応に変更
+// version 0.1 作成
 
 (($) => {
     const eno = $("#prof > div.charaBanner.cap > a").attr("href").replace(
@@ -135,12 +137,17 @@
   }
 
   function notification(title, text = null) {
-    $("div.noticearea").append(
-      $(
-        `<div class="notice"><p><span class="red">${title}</span>${
-          text ? "<br>" + text : ""
-        }</p></div>`
-      )
+    // 通知要素を作成して追加
+    const $notice = $(
+      `<div class="notice noticePlus"><p><span class="red">${title}</span>${
+        text ? "<br>" + text : ""
+      }</p></div>`
     );
+    $("div.noticearea").append($notice);
+
+    // 6秒後に通知を削除
+    setTimeout(() => {
+      $notice.remove();
+    }, 6000);
   }
 })(jQuery);
